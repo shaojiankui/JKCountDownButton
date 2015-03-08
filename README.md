@@ -1,0 +1,2 @@
+# JKCountDownButton
+JKCountDownButton,子类化UIButton实现IOS倒计时按钮,常常用于注册等发送验证码的时候进行倒计时操作
