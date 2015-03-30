@@ -28,7 +28,7 @@
     _second = totalSecond;
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerStart:) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop]addTimer:_timer forMode:NSDefaultRunLoopMode];
+    [[NSRunLoop currentRunLoop]addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 -(void)timerStart:(NSTimer *)theTimer {
     if (_second == 1)
