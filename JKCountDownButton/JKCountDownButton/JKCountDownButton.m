@@ -41,11 +41,15 @@
         if (_didChangeBlock)
         {
             [self setTitle:_didChangeBlock(self,_second) forState:UIControlStateNormal];
+            [self setTitle:_didChangeBlock(self,_second) forState:UIControlStateDisabled];
+
         }
         else
         {
             NSString *title = [NSString stringWithFormat:@"%d秒",_second];
             [self setTitle:title forState:UIControlStateNormal];
+            [self setTitle:title forState:UIControlStateDisabled];
+
         }
     }
 }
@@ -61,10 +65,14 @@
                 if (_didFinishedBlock)
                 {
                     [self setTitle:_didFinishedBlock(self,_totalSecond)forState:UIControlStateNormal];
+                    [self setTitle:_didFinishedBlock(self,_totalSecond)forState:UIControlStateDisabled];
+
                 }
                 else
                 {
                     [self setTitle:@"重新获取" forState:UIControlStateNormal];
+                    [self setTitle:@"重新获取" forState:UIControlStateDisabled];
+
                 }
             }
         }
