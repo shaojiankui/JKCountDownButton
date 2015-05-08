@@ -19,6 +19,8 @@ typedef void (^TouchedDownBlock)(JKCountDownButton *countDownButton,NSInteger ta
     int _totalSecond;
     
     NSTimer *_timer;
+    NSDate *_startDate;
+    
     DidChangeBlock _didChangeBlock;
     DidFinishedBlock _didFinishedBlock;
     TouchedDownBlock _touchedDownBlock;

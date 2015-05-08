@@ -56,7 +56,7 @@
 - (IBAction)countDownXibTouched:(JKCountDownButton*)sender {
     sender.enabled = NO;
     //button type要 设置成custom 否则会闪动
-    [sender startWithSecond:10];
+    [sender startWithSecond:60];
  
     [sender didChange:^NSString *(JKCountDownButton *countDownButton,int second) {
         NSString *title = [NSString stringWithFormat:@"剩余%d秒",second];

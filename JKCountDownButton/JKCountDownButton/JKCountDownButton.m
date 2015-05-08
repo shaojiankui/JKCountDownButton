@@ -28,16 +28,27 @@
     _second = totalSecond;
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerStart:) userInfo:nil repeats:YES];
+    _startDate = [NSDate date];
     [[NSRunLoop currentRunLoop]addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 -(void)timerStart:(NSTimer *)theTimer {
-    if (_second == 1)
+     double deltaTime = [[NSDate date] timeIntervalSinceDate:_startDate];
+    
+     _second = _totalSecond - (int)(deltaTime+0.5) ;
+//    NSLog(@"_second%.d",_second);
+//
+//    NSLog(@"deltaTime%.f",deltaTime);
+//    NSLog(@"int deltaTime%.d",(int)deltaTime);
+//    NSLog(@"%d",(int)(deltaTime+0.5));
+    
+    
+    if (_second< 0.0)
     {
         [self stop];
     }
     else
     {
-        _second--;
+//        _second--;
         if (_didChangeBlock)
         {
             [self setTitle:_didChangeBlock(self,_second) forState:UIControlStateNormal];
