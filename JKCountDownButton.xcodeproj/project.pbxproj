@@ -11,21 +11,10 @@
 		A2A7C4D21AABFE1D003C78DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A7C4D11AABFE1D003C78DF /* AppDelegate.m */; };
 		A2A7C4DA1AABFE1D003C78DF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2A7C4D91AABFE1D003C78DF /* Images.xcassets */; };
 		A2A7C4DD1AABFE1D003C78DF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A7C4DB1AABFE1D003C78DF /* LaunchScreen.xib */; };
-		A2A7C4E91AABFE1E003C78DF /* JKCountDownButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A7C4E81AABFE1E003C78DF /* JKCountDownButtonTests.m */; };
 		A2A7C4F51AABFE63003C78DF /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A7C4F31AABFE63003C78DF /* RootViewController.m */; };
 		A2A7C4F61AABFE63003C78DF /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A7C4F41AABFE63003C78DF /* RootViewController.xib */; };
 		A2A7C4FA1AABFEA7003C78DF /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A7C4F91AABFEA7003C78DF /* JKCountDownButton.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A2A7C4E31AABFE1D003C78DF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A2A7C4C11AABFE1D003C78DF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A2A7C4C81AABFE1D003C78DF;
-			remoteInfo = JKCountDownButton;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A2A7C4C91AABFE1D003C78DF /* JKCountDownButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKCountDownButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,9 +24,6 @@
 		A2A7C4D11AABFE1D003C78DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A2A7C4D91AABFE1D003C78DF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A2A7C4DC1AABFE1D003C78DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		A2A7C4E21AABFE1D003C78DF /* JKCountDownButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKCountDownButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2A7C4E71AABFE1E003C78DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2A7C4E81AABFE1E003C78DF /* JKCountDownButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButtonTests.m; sourceTree = "<group>"; };
 		A2A7C4F21AABFE63003C78DF /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		A2A7C4F31AABFE63003C78DF /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		A2A7C4F41AABFE63003C78DF /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
@@ -53,13 +39,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2A7C4DF1AABFE1D003C78DF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,7 +46,6 @@
 			isa = PBXGroup;
 			children = (
 				A2A7C4CB1AABFE1D003C78DF /* JKCountDownButton */,
-				A2A7C4E51AABFE1E003C78DF /* JKCountDownButtonTests */,
 				A2A7C4CA1AABFE1D003C78DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				A2A7C4C91AABFE1D003C78DF /* JKCountDownButton.app */,
-				A2A7C4E21AABFE1D003C78DF /* JKCountDownButtonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,23 +79,6 @@
 			children = (
 				A2A7C4CD1AABFE1D003C78DF /* Info.plist */,
 				A2A7C4CE1AABFE1D003C78DF /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A2A7C4E51AABFE1E003C78DF /* JKCountDownButtonTests */ = {
-			isa = PBXGroup;
-			children = (
-				A2A7C4E81AABFE1E003C78DF /* JKCountDownButtonTests.m */,
-				A2A7C4E61AABFE1E003C78DF /* Supporting Files */,
-			);
-			path = JKCountDownButtonTests;
-			sourceTree = "<group>";
-		};
-		A2A7C4E61AABFE1E003C78DF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A2A7C4E71AABFE1E003C78DF /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,39 +112,17 @@
 			productReference = A2A7C4C91AABFE1D003C78DF /* JKCountDownButton.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A2A7C4E11AABFE1D003C78DF /* JKCountDownButtonTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A2A7C4EF1AABFE1E003C78DF /* Build configuration list for PBXNativeTarget "JKCountDownButtonTests" */;
-			buildPhases = (
-				A2A7C4DE1AABFE1D003C78DF /* Sources */,
-				A2A7C4DF1AABFE1D003C78DF /* Frameworks */,
-				A2A7C4E01AABFE1D003C78DF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A2A7C4E41AABFE1D003C78DF /* PBXTargetDependency */,
-			);
-			name = JKCountDownButtonTests;
-			productName = JKCountDownButtonTests;
-			productReference = A2A7C4E21AABFE1D003C78DF /* JKCountDownButtonTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A2A7C4C11AABFE1D003C78DF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = www.skyfox.org;
 				TargetAttributes = {
 					A2A7C4C81AABFE1D003C78DF = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					A2A7C4E11AABFE1D003C78DF = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = A2A7C4C81AABFE1D003C78DF;
 					};
 				};
 			};
@@ -202,7 +140,6 @@
 			projectRoot = "";
 			targets = (
 				A2A7C4C81AABFE1D003C78DF /* JKCountDownButton */,
-				A2A7C4E11AABFE1D003C78DF /* JKCountDownButtonTests */,
 			);
 		};
 /* End PBXProject section */
@@ -215,13 +152,6 @@
 				A2A7C4DD1AABFE1D003C78DF /* LaunchScreen.xib in Resources */,
 				A2A7C4DA1AABFE1D003C78DF /* Images.xcassets in Resources */,
 				A2A7C4F61AABFE63003C78DF /* RootViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A2A7C4E01AABFE1D003C78DF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,23 +169,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2A7C4DE1AABFE1D003C78DF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A2A7C4E91AABFE1E003C78DF /* JKCountDownButtonTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A2A7C4E41AABFE1D003C78DF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A2A7C4C81AABFE1D003C78DF /* JKCountDownButton */;
-			targetProxy = A2A7C4E31AABFE1D003C78DF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A2A7C4DB1AABFE1D003C78DF /* LaunchScreen.xib */ = {
@@ -289,6 +203,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -352,6 +267,7 @@
 				INFOPLIST_FILE = JKCountDownButton/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.skyfox.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -363,41 +279,8 @@
 				INFOPLIST_FILE = JKCountDownButton/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.skyfox.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		A2A7C4F01AABFE1E003C78DF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = JKCountDownButtonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JKCountDownButton.app/JKCountDownButton";
-			};
-			name = Debug;
-		};
-		A2A7C4F11AABFE1E003C78DF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = JKCountDownButtonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JKCountDownButton.app/JKCountDownButton";
 			};
 			name = Release;
 		};
@@ -418,15 +301,6 @@
 			buildConfigurations = (
 				A2A7C4ED1AABFE1E003C78DF /* Debug */,
 				A2A7C4EE1AABFE1E003C78DF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A2A7C4EF1AABFE1E003C78DF /* Build configuration list for PBXNativeTarget "JKCountDownButtonTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A2A7C4F01AABFE1E003C78DF /* Debug */,
-				A2A7C4F11AABFE1E003C78DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

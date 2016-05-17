@@ -10,19 +10,19 @@
 
 @implementation JKCountDownButton
 #pragma -mark touche action
--(void)addToucheHandler:(TouchedDownBlock)touchHandler{
-    _touchedDownBlock = [touchHandler copy];
+-(void)countDownButtonHandler:(TouchedCountDownButtonHandler)touchedCountDownButtonHandler{
+    _touchedCountDownButtonHandler = [touchedCountDownButtonHandler copy];
     [self addTarget:self action:@selector(touched:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)touched:(JKCountDownButton*)sender{
-    if (_touchedDownBlock) {
-        _touchedDownBlock(sender,sender.tag);
+    if (_touchedCountDownButtonHandler) {
+        _touchedCountDownButtonHandler(sender,sender.tag);
     }
 }
 
 #pragma -mark count down method
--(void)startWithSecond:(int)totalSecond
+-(void)startCountDownWithSecond:(NSUInteger)totalSecond
 {
     _totalSecond = totalSecond;
     _second = totalSecond;
@@ -34,30 +34,24 @@
 -(void)timerStart:(NSTimer *)theTimer {
      double deltaTime = [[NSDate date] timeIntervalSinceDate:_startDate];
     
-     _second = _totalSecond - (int)(deltaTime+0.5) ;
-//    NSLog(@"_second%.d",_second);
-//
-//    NSLog(@"deltaTime%.f",deltaTime);
-//    NSLog(@"int deltaTime%.d",(int)deltaTime);
-//    NSLog(@"%d",(int)(deltaTime+0.5));
-    
+     _second = _totalSecond - (NSInteger)(deltaTime+0.5) ;
+
     
     if (_second< 0.0)
     {
-        [self stop];
+        [self stopCountDown];
     }
     else
     {
-//        _second--;
-        if (_didChangeBlock)
+        if (_countDownChanging)
         {
-            [self setTitle:_didChangeBlock(self,_second) forState:UIControlStateNormal];
-            [self setTitle:_didChangeBlock(self,_second) forState:UIControlStateDisabled];
+            [self setTitle:_countDownChanging(self,_second) forState:UIControlStateNormal];
+            [self setTitle:_countDownChanging(self,_second) forState:UIControlStateDisabled];
 
         }
         else
         {
-            NSString *title = [NSString stringWithFormat:@"%d秒",_second];
+            NSString *title = [NSString stringWithFormat:@"%zd秒",_second];
             [self setTitle:title forState:UIControlStateNormal];
             [self setTitle:title forState:UIControlStateDisabled];
 
@@ -65,7 +59,7 @@
     }
 }
 
-- (void)stop{
+- (void)stopCountDown{
     if (_timer) {
         if ([_timer respondsToSelector:@selector(isValid)])
         {
@@ -73,10 +67,10 @@
             {
                 [_timer invalidate];
                 _second = _totalSecond;
-                if (_didFinishedBlock)
+                if (_countDownFinished)
                 {
-                    [self setTitle:_didFinishedBlock(self,_totalSecond)forState:UIControlStateNormal];
-                    [self setTitle:_didFinishedBlock(self,_totalSecond)forState:UIControlStateDisabled];
+                    [self setTitle:_countDownFinished(self,_totalSecond)forState:UIControlStateNormal];
+                    [self setTitle:_countDownFinished(self,_totalSecond)forState:UIControlStateDisabled];
 
                 }
                 else
@@ -90,10 +84,10 @@
     }
 }
 #pragma -mark block
--(void)didChange:(DidChangeBlock)didChangeBlock{
-    _didChangeBlock = [didChangeBlock copy];
+-(void)countDownChanging:(CountDownChanging)countDownChanging{
+    _countDownChanging = [countDownChanging copy];
 }
--(void)didFinished:(DidFinishedBlock)didFinishedBlock{
-    _didFinishedBlock = [didFinishedBlock copy];
+-(void)countDownFinished:(CountDownFinished)countDownFinished{
+    _countDownFinished = [countDownFinished copy];
 }
 @end

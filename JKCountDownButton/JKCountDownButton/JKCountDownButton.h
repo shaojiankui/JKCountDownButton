@@ -8,29 +8,29 @@
 
 #import <UIKit/UIKit.h>
 @class JKCountDownButton;
-typedef NSString* (^DidChangeBlock)(JKCountDownButton *countDownButton,int second);
-typedef NSString* (^DidFinishedBlock)(JKCountDownButton *countDownButton,int second);
+typedef NSString* (^CountDownChanging)(JKCountDownButton *countDownButton,NSUInteger second);
+typedef NSString* (^CountDownFinished)(JKCountDownButton *countDownButton,NSUInteger second);
 
-typedef void (^TouchedDownBlock)(JKCountDownButton *countDownButton,NSInteger tag);
+typedef void (^TouchedCountDownButtonHandler)(JKCountDownButton *countDownButton,NSInteger tag);
 
 @interface JKCountDownButton : UIButton
 {
-    int _second;
-    int _totalSecond;
+    NSInteger _second;
+    NSUInteger _totalSecond;
     
     NSTimer *_timer;
     NSDate *_startDate;
     
-    DidChangeBlock _didChangeBlock;
-    DidFinishedBlock _didFinishedBlock;
-    TouchedDownBlock _touchedDownBlock;
+    CountDownChanging _countDownChanging;
+    CountDownFinished _countDownFinished;
+    TouchedCountDownButtonHandler _touchedCountDownButtonHandler;
 }
-//@property(nonatomic,strong)UIColor *changeFontColor;
-//@property(nonatomic,strong)UIColor *normalFontColor;
--(void)addToucheHandler:(TouchedDownBlock)touchHandler;
+@property(nonatomic,strong) id userInfo;
 
--(void)didChange:(DidChangeBlock)didChangeBlock;
--(void)didFinished:(DidFinishedBlock)didFinishedBlock;
--(void)startWithSecond:(int)second;
-- (void)stop;
+-(void)countDownButtonHandler:(TouchedCountDownButtonHandler)touchedCountDownButtonHandler;
+-(void)countDownChanging:(CountDownChanging)countDownChanging;
+-(void)countDownFinished:(CountDownFinished)countDownFinished;
+
+-(void)startCountDownWithSecond:(NSUInteger)second;
+-(void)stopCountDown;
 @end

@@ -35,16 +35,16 @@
     [self.view addSubview:_countDownCode];
     
     
-    [_countDownCode addToucheHandler:^(JKCountDownButton*sender, NSInteger tag) {
+    [_countDownCode countDownButtonHandler:^(JKCountDownButton*sender, NSInteger tag) {
         sender.enabled = NO;
 
-        [sender startWithSecond:10];
+        [sender startCountDownWithSecond:10];
 
-        [sender didChange:^NSString *(JKCountDownButton *countDownButton,int second) {
-            NSString *title = [NSString stringWithFormat:@"剩余%d秒",second];
+        [sender countDownChanging:^NSString *(JKCountDownButton *countDownButton,NSUInteger second) {
+            NSString *title = [NSString stringWithFormat:@"剩余%zd秒",second];
             return title;
         }];
-        [sender didFinished:^NSString *(JKCountDownButton *countDownButton, int second) {
+        [sender countDownFinished:^NSString *(JKCountDownButton *countDownButton, NSUInteger second) {
             countDownButton.enabled = YES;
             return @"点击重新获取";
             
@@ -56,13 +56,13 @@
 - (IBAction)countDownXibTouched:(JKCountDownButton*)sender {
     sender.enabled = NO;
     //button type要 设置成custom 否则会闪动
-    [sender startWithSecond:60];
+    [sender startCountDownWithSecond:60];
  
-    [sender didChange:^NSString *(JKCountDownButton *countDownButton,int second) {
-        NSString *title = [NSString stringWithFormat:@"剩余%d秒",second];
+    [sender countDownChanging:^NSString *(JKCountDownButton *countDownButton,NSUInteger second) {
+        NSString *title = [NSString stringWithFormat:@"剩余%zd秒",second];
         return title;
     }];
-    [sender didFinished:^NSString *(JKCountDownButton *countDownButton, int second) {
+    [sender countDownFinished:^NSString *(JKCountDownButton *countDownButton, NSUInteger second) {
         countDownButton.enabled = YES;
         return @"点击重新获取";
         
@@ -70,7 +70,7 @@
 }
 
 - (IBAction)countDownXibStop:(id)sender {
-    [self.countDownXib stop];
-    [_countDownCode stop];
+    [self.countDownXib stopCountDown];
+    [_countDownCode stopCountDown];
 }
 @end
