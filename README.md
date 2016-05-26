@@ -1,7 +1,21 @@
 # JKCountDownButton
 JKCountDownButton,子类化UIButton实现IOS倒计时按钮,常常用于注册等发送验证码的时候进行倒计时操作
 
-##代码方式使用
+JKCountDownButton, subclassing UIButton implementation iOS countdown button, register with sending the verification code and countdown
+
+## Installation
+
+### Installation with CocoaPods
+
+	platform :ios
+ 	pod 'JKCountDownButton'
+ 	
+### Manually
+
+Copy JKCountDownButton.h JKCountDownButton.m in JKCountDownButton/ to your project.
+
+## Usage
+### Code
     JKCountDownButton *_countDownCode;
     _countDownCode = [JKCountDownButton buttonWithType:UIButtonTypeCustom];
     _countDownCode.frame = CGRectMake(81, 200, 108, 32);
@@ -27,7 +41,7 @@ JKCountDownButton,子类化UIButton实现IOS倒计时按钮,常常用于注册�
     }];
 
     
-##xib方式使用
+###xib
     @property (weak, nonatomic) IBOutlet JKCountDownButton *countDownXib;
 
     - (IBAction)countDownXibTouched:(JKCountDownButton*)sender {
@@ -45,7 +59,9 @@ JKCountDownButton,子类化UIButton实现IOS倒计时按钮,常常用于注册�
         
     }];
 }
+## License
 
+This code is distributed under the terms and conditions of the MIT license.
 
-##效果图
+## Demo
 ![](https://raw.githubusercontent.com/shaojiankui/JKCountDownButton/master/demo.gif)
