@@ -10,27 +10,18 @@
 @class JKCountDownButton;
 typedef NSString* (^CountDownChanging)(JKCountDownButton *countDownButton,NSUInteger second);
 typedef NSString* (^CountDownFinished)(JKCountDownButton *countDownButton,NSUInteger second);
-
 typedef void (^TouchedCountDownButtonHandler)(JKCountDownButton *countDownButton,NSInteger tag);
 
 @interface JKCountDownButton : UIButton
-{
-    NSInteger _second;
-    NSUInteger _totalSecond;
-    
-    NSTimer *_timer;
-    NSDate *_startDate;
-    
-    CountDownChanging _countDownChanging;
-    CountDownFinished _countDownFinished;
-    TouchedCountDownButtonHandler _touchedCountDownButtonHandler;
-}
 @property(nonatomic,strong) id userInfo;
-
--(void)countDownButtonHandler:(TouchedCountDownButtonHandler)touchedCountDownButtonHandler;
--(void)countDownChanging:(CountDownChanging)countDownChanging;
--(void)countDownFinished:(CountDownFinished)countDownFinished;
-
--(void)startCountDownWithSecond:(NSUInteger)second;
--(void)stopCountDown;
+///倒计时按钮点击回调
+- (void)countDownButtonHandler:(TouchedCountDownButtonHandler)touchedCountDownButtonHandler;
+//倒计时时间改变回调
+- (void)countDownChanging:(CountDownChanging)countDownChanging;
+//倒计时结束回调
+- (void)countDownFinished:(CountDownFinished)countDownFinished;
+///开始倒计时
+- (void)startCountDownWithSecond:(NSUInteger)second;
+///停止倒计时
+- (void)stopCountDown;
 @end

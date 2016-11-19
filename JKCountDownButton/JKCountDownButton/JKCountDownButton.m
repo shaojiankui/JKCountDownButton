@@ -7,22 +7,34 @@
 //
 
 #import "JKCountDownButton.h"
+@interface JKCountDownButton(){
+    NSInteger _second;
+    NSUInteger _totalSecond;
+    
+    NSTimer *_timer;
+    NSDate *_startDate;
+    
+    CountDownChanging _countDownChanging;
+    CountDownFinished _countDownFinished;
+    TouchedCountDownButtonHandler _touchedCountDownButtonHandler;
+}
+@end
 
 @implementation JKCountDownButton
 #pragma -mark touche action
--(void)countDownButtonHandler:(TouchedCountDownButtonHandler)touchedCountDownButtonHandler{
+- (void)countDownButtonHandler:(TouchedCountDownButtonHandler)touchedCountDownButtonHandler{
     _touchedCountDownButtonHandler = [touchedCountDownButtonHandler copy];
     [self addTarget:self action:@selector(touched:) forControlEvents:UIControlEventTouchUpInside];
 }
 
--(void)touched:(JKCountDownButton*)sender{
+- (void)touched:(JKCountDownButton*)sender{
     if (_touchedCountDownButtonHandler) {
         _touchedCountDownButtonHandler(sender,sender.tag);
     }
 }
 
 #pragma -mark count down method
--(void)startCountDownWithSecond:(NSUInteger)totalSecond
+- (void)startCountDownWithSecond:(NSUInteger)totalSecond
 {
     _totalSecond = totalSecond;
     _second = totalSecond;
@@ -31,7 +43,7 @@
     _startDate = [NSDate date];
     [[NSRunLoop currentRunLoop]addTimer:_timer forMode:NSRunLoopCommonModes];
 }
--(void)timerStart:(NSTimer *)theTimer {
+- (void)timerStart:(NSTimer *)theTimer {
      double deltaTime = [[NSDate date] timeIntervalSinceDate:_startDate];
     
      _second = _totalSecond - (NSInteger)(deltaTime+0.5) ;
@@ -84,10 +96,10 @@
     }
 }
 #pragma -mark block
--(void)countDownChanging:(CountDownChanging)countDownChanging{
+- (void)countDownChanging:(CountDownChanging)countDownChanging{
     _countDownChanging = [countDownChanging copy];
 }
--(void)countDownFinished:(CountDownFinished)countDownFinished{
+- (void)countDownFinished:(CountDownFinished)countDownFinished{
     _countDownFinished = [countDownFinished copy];
 }
 @end
