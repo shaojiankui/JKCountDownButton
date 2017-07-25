@@ -29,7 +29,9 @@
 
 - (void)touched:(JKCountDownButton*)sender{
     if (_touchedCountDownButtonHandler) {
-        _touchedCountDownButtonHandler(sender,sender.tag);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _touchedCountDownButtonHandler(sender,sender.tag);
+        });
     }
 }
 
@@ -41,6 +43,7 @@
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerStart:) userInfo:nil repeats:YES];
     _startDate = [NSDate date];
+    _timer.fireDate = [NSDate distantPast];
     [[NSRunLoop currentRunLoop]addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 - (void)timerStart:(NSTimer *)theTimer {
@@ -57,9 +60,10 @@
     {
         if (_countDownChanging)
         {
-            [self setTitle:_countDownChanging(self,_second) forState:UIControlStateNormal];
-            [self setTitle:_countDownChanging(self,_second) forState:UIControlStateDisabled];
-
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self setTitle:_countDownChanging(self,_second) forState:UIControlStateNormal];
+                [self setTitle:_countDownChanging(self,_second) forState:UIControlStateDisabled];
+            });
         }
         else
         {
@@ -81,9 +85,10 @@
                 _second = _totalSecond;
                 if (_countDownFinished)
                 {
-                    [self setTitle:_countDownFinished(self,_totalSecond)forState:UIControlStateNormal];
-                    [self setTitle:_countDownFinished(self,_totalSecond)forState:UIControlStateDisabled];
-
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self setTitle:_countDownFinished(self,_totalSecond)forState:UIControlStateNormal];
+                        [self setTitle:_countDownFinished(self,_totalSecond)forState:UIControlStateDisabled];
+                    });
                 }
                 else
                 {
