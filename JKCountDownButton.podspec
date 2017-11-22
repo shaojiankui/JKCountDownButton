@@ -1,4 +1,4 @@
-version = "1.1.0";
+version = "1.2.0";
 
 Pod::Spec.new do |s|
   s.name         = "JKCountDownButton"
