@@ -1,4 +1,4 @@
-version = "1.2.0";
+version = "1.3.0";
 
 Pod::Spec.new do |s|
   s.name         = "JKCountDownButton"
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "skyfox" => "i@skyfox.org" }
   s.social_media_url   = "http://www.skyfox.org"
-  s.platform     = :ios
+  s.platform     = :ios,"6.0"
   s.requires_arc = true
   s.source       = { :git => "https://github.com/shaojiankui/JKCountDownButton.git", :tag => "#{version}" }
   s.source_files = "JKCountDownButton/JKCountDownButton/JKCountDownButton.{h,m}"

@@ -14,6 +14,8 @@
 		A2A7C4F51AABFE63003C78DF /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A7C4F31AABFE63003C78DF /* RootViewController.m */; };
 		A2A7C4F61AABFE63003C78DF /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A7C4F41AABFE63003C78DF /* RootViewController.xib */; };
 		A2A7C4FA1AABFEA7003C78DF /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A7C4F91AABFEA7003C78DF /* JKCountDownButton.m */; };
+		B8D356C121525252004E5E19 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D356BE21525250004E5E19 /* DemoViewController.m */; };
+		B8D356C221525252004E5E19 /* DemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D356BF21525251004E5E19 /* DemoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,9 @@
 		A2A7C4F41AABFE63003C78DF /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		A2A7C4F81AABFEA7003C78DF /* JKCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
 		A2A7C4F91AABFEA7003C78DF /* JKCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
+		B8D356BE21525250004E5E19 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		B8D356BF21525251004E5E19 /* DemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoViewController.xib; sourceTree = "<group>"; };
+		B8D356C021525252004E5E19 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +72,9 @@
 				A2A7C4F21AABFE63003C78DF /* RootViewController.h */,
 				A2A7C4F31AABFE63003C78DF /* RootViewController.m */,
 				A2A7C4F41AABFE63003C78DF /* RootViewController.xib */,
+				B8D356C021525252004E5E19 /* DemoViewController.h */,
+				B8D356BE21525250004E5E19 /* DemoViewController.m */,
+				B8D356BF21525251004E5E19 /* DemoViewController.xib */,
 				A2A7C4D91AABFE1D003C78DF /* Images.xcassets */,
 				A2A7C4DB1AABFE1D003C78DF /* LaunchScreen.xib */,
 				A2A7C4CC1AABFE1D003C78DF /* Supporting Files */,
@@ -152,6 +160,7 @@
 				A2A7C4DD1AABFE1D003C78DF /* LaunchScreen.xib in Resources */,
 				A2A7C4DA1AABFE1D003C78DF /* Images.xcassets in Resources */,
 				A2A7C4F61AABFE63003C78DF /* RootViewController.xib in Resources */,
+				B8D356C221525252004E5E19 /* DemoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +174,7 @@
 				A2A7C4FA1AABFEA7003C78DF /* JKCountDownButton.m in Sources */,
 				A2A7C4D21AABFE1D003C78DF /* AppDelegate.m in Sources */,
 				A2A7C4CF1AABFE1D003C78DF /* main.m in Sources */,
+				B8D356C121525252004E5E19 /* DemoViewController.m in Sources */,
 				A2A7C4F51AABFE63003C78DF /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
