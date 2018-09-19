@@ -7,7 +7,7 @@
 //
 
 #import "RootViewController.h"
-
+#import "DemoViewController.h"
 @interface RootViewController ()
 
 @end
@@ -72,5 +72,9 @@
 - (IBAction)countDownXibStop:(id)sender {
     [self.countDownXib stopCountDown];
     [_countDownCode stopCountDown];
+}
+- (IBAction)pushTouched:(id)sender {
+    DemoViewController *demo = [[DemoViewController alloc] init];
+    [self.navigationController pushViewController:demo animated:YES];
 }
 @end

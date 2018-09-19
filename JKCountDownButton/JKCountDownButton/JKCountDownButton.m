@@ -7,6 +7,13 @@
 //
 
 #import "JKCountDownButton.h"
+@interface NSTimer (JKCountDownBlocksSupport)
++ (NSTimer *)jkcd_scheduledTimerWithTimeInterval:(NSTimeInterval)interval
+                                           block:(void(^)(void))block
+                                         repeats:(BOOL)repeats;
+@end
+
+
 @interface JKCountDownButton(){
     NSInteger _second;
     NSUInteger _totalSecond;
@@ -40,13 +47,19 @@
 {
     _totalSecond = totalSecond;
     _second = totalSecond;
+   
     
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerStart:) userInfo:nil repeats:YES];
+    __weak typeof(self) weakSelf = self;
+    _timer = [NSTimer jkcd_scheduledTimerWithTimeInterval:1.0 block:^{
+         typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf timerStart];
+    } repeats:YES];
+    
     _startDate = [NSDate date];
     _timer.fireDate = [NSDate distantPast];
     [[NSRunLoop currentRunLoop]addTimer:_timer forMode:NSRunLoopCommonModes];
 }
-- (void)timerStart:(NSTimer *)theTimer {
+- (void)timerStart {
      double deltaTime = [[NSDate date] timeIntervalSinceDate:_startDate];
     
      _second = _totalSecond - (NSInteger)(deltaTime+0.5) ;
@@ -108,5 +121,25 @@
 }
 - (void)countDownFinished:(CountDownFinished)countDownFinished{
     _countDownFinished = [countDownFinished copy];
+}
+@end
+
+
+@implementation NSTimer (JKCountDownBlocksSupport)
++ (NSTimer *)jkcd_scheduledTimerWithTimeInterval:(NSTimeInterval)interval
+                                           block:(void(^)(void))block
+                                         repeats:(BOOL)repeats
+{
+    return [self scheduledTimerWithTimeInterval:interval
+                                         target:self
+                                       selector:@selector(jkcd_blockInvoke:)
+                                       userInfo:[block copy]
+                                        repeats:repeats];
+}
++ (void)jkcd_blockInvoke:(NSTimer *)timer {
+    void (^block)(void) = timer.userInfo;
+    if(block) {
+        block();
+    }
 }
 @end

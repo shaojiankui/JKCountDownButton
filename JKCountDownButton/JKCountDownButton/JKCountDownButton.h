@@ -25,3 +25,6 @@ typedef void (^TouchedCountDownButtonHandler)(JKCountDownButton *countDownButton
 ///停止倒计时
 - (void)stopCountDown;
 @end
+
+
+
